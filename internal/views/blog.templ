@@ -1,0 +1,37 @@
+package views
+
+import (
+	"context"
+	"github.com/pheynnx/pheynnx.com/internal/model"
+	"io"
+)
+
+templ BlogBuilder(post *model.Post) {
+	@Main(BlogPage(post))
+}
+
+templ BlogPage(post *model.Post) {
+	<div class="main-blog-container">
+		<div class="blog-post-markdown-container">
+			<h1 class="blog-post-markdown-title">{ post.Title }</h1>
+			<h3 class="blog-post-markdown-date">{ post.Date.Format("January 02, 2006") }</h3>
+			<div class="blog-post-markdown-categories">
+				for _, category := range post.Categories {
+					<div class="post_card-category">
+						<span class="post_card-category-info">{ category }</span>
+					</div>
+				}
+			</div>
+			<div class="blog-post-markdown">
+				@Unsafe(post.Markdown)
+			</div>
+		</div>
+	</div>
+}
+
+func Unsafe(html string) templ.Component {
+	return templ.ComponentFunc(func(ctx context.Context, w io.Writer) (err error) {
+		_, err = io.WriteString(w, html)
+		return
+	})
+}

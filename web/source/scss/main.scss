@@ -1,0 +1,90 @@
+@import "_fonts.scss";
+@import "_variables.scss";
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--html-bgc);
+  color: var(--font-color);
+  min-height: 100vh;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+
+  &:horizontal {
+    height: 4px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+
+  &:vertical {
+    background: #232330;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9c9c9;
+  border-radius: 4px;
+
+  &:hover {
+    background: #9b9b9b;
+  }
+}
+
+header {
+  display: grid;
+  padding: 10px 0 0px 0;
+  justify-items: center;
+
+  & h1 {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 28px;
+  }
+
+  & svg.main-logo {
+    margin-top: 15px;
+    height: 125px;
+  }
+}
+
+.topper {
+  display: grid;
+  z-index: 100;
+  top: 0px;
+  position: sticky;
+  // background-color: #181920;
+  // border-bottom: 1px solid #09090c;
+  // margin-bottom: 25px;
+}
+
+// includes
+@import "./includes/_navbar.scss";
+
+// views
+@import "./views/_index.scss";
+@import "./views/_blog_post.scss";
+
+@import "./components/_code_blocks.scss";

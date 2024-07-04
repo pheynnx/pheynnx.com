@@ -1,0 +1,15 @@
+# go
+.env
+
+# air
+/bin/
+/tmp/
+
+# compiled
+web/static/css/main.css
+web/static/js/*-compiled.js
+*_templ.go
+build
+
+# node
+node_modules

@@ -1,0 +1,106 @@
+package views
+
+import (
+	"fmt"
+	"github.com/pheynnx/pheynnx.com/internal/model/dto"
+)
+
+templ IndexBuilder(posts []*dto.Meta, containsFeatured bool) {
+	@Main(IndexPage(posts, containsFeatured))
+}
+
+templ IndexPage(posts []*dto.Meta, containsFeatured bool) {
+	<div class="main-index-container">
+		<div id="posts-container" class="posts-container">
+			<div class="posts-main-header">
+				<h1 class="posts-main-label">Blog</h1>
+				<!-- <button
+ 					class="index-compact-toggle"
+ 					type="button"
+ 					onClick="(function(e){
+					const postContainer = document.getElementById('posts-container')
+
+					const compactToggle = JSON.parse(localStorage.getItem('compact'));
+
+					const svgElements = event.currentTarget.querySelectorAll('svg');
+
+					svgElements.forEach(function(svgElement) {
+						svgElement.classList.toggle('show');
+					});
+
+					if (compactToggle) {
+						postContainer.classList.remove('compact')
+						localStorage.setItem('compact', false);
+					} else {
+						postContainer.classList.add('compact')
+						localStorage.setItem('compact', true);
+					}
+
+				}())"
+				>
+					<svg id="ct-exp" class="show" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#fff"><path d="M120-80v-80h720v80H120Zm0-240v-80h720v80H120Zm0-240v-80h720v80H120Zm0-240v-80h720v80H120Z"></path></svg>
+					<svg id="ct-comp" id="compact-toggle" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#fff"><path d="M120-120v-80h720v80H120Zm0-160v-80h720v80H120Zm0-160v-80h720v80H120Zm0-160v-80h720v80H120Zm0-160v-80h720v80H120Z"></path></svg>
+				</button> -->
+			</div>
+			<!-- <script>
+				const postContainer = document.getElementById("posts-container")
+
+				const ctE = document.getElementById('ct-exp')
+				const ctC = document.getElementById('ct-comp')
+
+				const compactToggle = JSON.parse(localStorage.getItem('compact'));
+
+				if (compactToggle) {
+					ctE.classList.remove("show")
+					ctC.classList.add("show")
+					postContainer.classList.add('compact')
+				}
+			</script> -->
+			if containsFeatured {
+				<div class="featured-container">
+					<h1 class="posts-label">Featued Posts</h1>
+					for _, post := range posts {
+						if post.Featured {
+							@PostCard(post)
+						}
+					}
+				</div>
+			}
+			<h1 class="posts-label">Latest Posts</h1>
+			<div class="non_featured-container">
+				for _, post := range posts {
+					if !post.Featured {
+						@PostCard(post)
+					}
+				}
+			</div>
+		</div>
+	</div>
+}
+
+templ PostCard(post *dto.Meta) {
+	<div
+		if post.Featured {
+			class="post_card_featured"
+		} else {
+			class="post_card"
+		}
+	>
+		<div class="post_card-header">
+			<a class="post_card-anchor" href={ templ.URL(fmt.Sprintf("/blog/%s", post.Slug)) }>
+				<p class="post_card-title">{ post.Title }</p>
+			</a>
+			<p class="post_card-date">{ post.Date.Format("January 02, 2006") }</p>
+			if post.Featured {
+				<p class="post_card-snippet">{ post.PostSnippet }</p>
+			}
+		</div>
+		<div class="post_card-categories">
+			for _, category := range post.Categories {
+				<div class="post_card-category">
+					<span class="post_card-category-info">{ category }</span>
+				</div>
+			}
+		</div>
+	</div>
+}

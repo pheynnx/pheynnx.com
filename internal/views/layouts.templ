@@ -1,0 +1,124 @@
+package views
+
+templ Main(contents templ.Component) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<meta name="description" content="Pheynnx"/>
+			<title>Pheynnx</title>
+			<link rel="preload" href="/static/fonts/CascadiaMono.ttf" as="font" type="font/ttf" crossorigin/>
+			// <link rel="preload" href="/static/fonts/CascadiaMono.woff2" as="font" type="font/woff2" crossorigin/>
+			<link rel="stylesheet" href="/static/css/main.css"/>
+			// <script src="/static/js/htmx.js"></script>
+			// <script src="/static/js/hyperscript.js"></script>
+			// <script src="/static/js/idiomorph-ext.min.js"></script>
+		</head>
+		<body>
+			<script>
+				let themeValue = localStorage.getItem('theme');
+
+				if (themeValue !== "dark" && themeValue !== "light") {
+					themeValue = "dark"
+				}
+
+				document.documentElement.setAttribute('data-theme', themeValue);
+
+				localStorage.setItem("theme", themeValue)
+
+			</script>
+			@header()
+			// @navbar()
+			@contents
+		</body>
+	</html>
+}
+
+templ header() {
+	<header>
+		<svg class="main-logo" width="100%" height="100%" viewBox="0 0 458 458" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+			<g transform="matrix(1,0,0,1,-21.0506,-21.0485)">
+				<g id="vector" transform="matrix(0.00452581,0,0,0.00452581,-86.383,-113.011)">
+					<path id="body" d="M98138.8,98886.2C98138.8,98886.2 110255,87348.2 107577,64666.8C104834,71103.7 100490,74748.8 93978.4,78742.5C106776,53853.6 91392.9,30690.2 61820.7,31181.1C65820.7,30162.5 70010.3,29621 74325.5,29621C114206,30889.7 128917,77415 98138.8,98886.2Z" style="fill:rgb(255,122,18);"></path>
+					<path id="body1" serif:id="body" d="M43706.5,59533.3C52469.1,54434.1 65643.7,54193.4 69184.2,55497C76364.9,58141.2 84275.9,62763.6 87567.5,63405.4C84773.7,64795.2 82007.9,65737.8 79214,66236.8C95304.7,83761.7 92772.1,107070 92772.1,107070C106965,103286 116610,94876.4 120893,83163.3C119418,94866.2 113441,108131 103580,117021C107678,115257 111672,112803 115355,109792C112216,114135 108390,117975 104059,121129C100869,123451 97408.6,125401 93767,126919C90452.5,128302 86990.2,129327 83457.3,129972C77837.7,130997 72043.2,131068 66400.5,130178C62880.4,129622 59420,128693 56096.3,127407C53462.8,126388 50915.9,125146 48490,123701C46181.1,122326 43982.1,120766 41919.7,119043C95630.7,123130 84207.8,55866.5 43706.5,59533.3ZM62804,56961C65245.8,56922.3 67079,57221.3 68273,57905C68273,57905 67754.1,59948.4 65601,59457C64686.2,59248.2 63448.6,58219 62804,56961Z" style="fill:white;"></path>
+					<g id="base-circle" serif:id="base circle" transform="matrix(0.958296,0,0,0.958296,4787.69,5033.04)">
+						<path d="M21398,65417.7C25361.7,86072.9 37602.1,96672.3 48712.2,97914.9C55957.6,98725.2 62825.4,95009.2 66248.1,89391.9C72413.8,79273 65203.5,60780.5 40612.5,56872C82876.4,53045.7 94796.4,123236 38747.9,118971C27155,109285 19775,94720.9 19775,78447C19775,73951.1 20338.3,69585.8 21398,65417.7Z" style="fill:rgb(255,74,49);"></path>
+					</g>
+					<g id="right-flare" serif:id="right flare" transform="matrix(0.958296,0,0,0.958296,4787.69,5033.04)">
+						<path d="M116112,81255.1C120152,67778.4 119279,55360 112699,44170.8C120587,53396.2 125353,65369.5 125353,78447C125353,85596.4 123929,92415.8 121348,98636.6C123446,90835.7 124043,82959.8 122873,74995.6C121039,77585.9 118763,79645.1 116112,81255.1Z" style="fill:rgb(255,181,39);stroke:black;stroke-width:0.77px;"></path>
+					</g>
+					<g id="left-flare" serif:id="left flare" transform="matrix(0.958296,0,0,0.958296,4787.69,5033.04)">
+						<path d="M43002.2,87970.7C30536.9,82524.8 23658.6,73204.1 23349.5,59327.3C28102.4,47115.8 37272,37103.9 48891.7,31258.3C24356.1,47253 28916.9,77165 43002.2,87970.7Z" style="fill:rgb(255,181,39);"></path>
+					</g>
+				</g>
+			</g>
+		</svg>
+		<h1>Pheynnx</h1>
+	</header>
+}
+
+templ navbar() {
+	<nav class="navigation">
+		<div></div>
+		<div class="navigation-links">
+			<a href="/">
+				<svg class="header-logo" width="100%" height="100%" viewBox="0 0 210 181" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><path class="upper" d="M0,180.436l105.174,-180.436l35.46,57.894l-70.679,123.025l-69.955,-0.483"></path><path class="lower" d="M140.634,57.894l68.749,122.301l-68.508,0.241l-23.881,-42.214l23.64,-80.328Z"></path><path d="M116.994,138.222l-10.92,-20.072l34.561,-60.255l-23.641,80.327" style="fill:#5a4424;"></path></g></svg>
+			</a>
+		</div>
+		<div class="navigation-utilities">
+			<button
+				class="toggle-button"
+				onClick="(function(e) {
+					const span = document.querySelector('.toggle-check');
+
+					let themeValue = localStorage.getItem('theme');
+
+					switch (themeValue) {
+						case 'dark':
+							localStorage.setItem('theme', 'light')
+							document.documentElement.setAttribute('data-theme', 'light');
+							break;
+						case 'light':
+							localStorage.setItem('theme', 'dark')
+							document.documentElement.setAttribute('data-theme', 'dark');
+							break;
+						default:
+					}
+
+					span.classList.toggle('checked')
+				}())"
+			>
+				<span class="toggle-check">
+					<span class="toggle-icon">
+						<svg class="toggle-dark" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21q-3.775 0-6.388-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.625-.075.975.45t-.025 1.1q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.525-.35 1.075-.037t.475.987q-.35 3.45-2.937 5.725T12 21Zm0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19Zm-.25-6.75Z"></path></svg>
+						<svg class="toggle-light" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M0 0h24v24H0z"></path><path fill="currentColor" d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1zm6.313-2.09l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7a1 1 0 0 1 1.218-1.567l.102.07zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0zM4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11h1zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11h1zM6.213 4.81l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7A1 1 0 0 1 6.11 4.74l.102.07zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0zM12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1zm0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7z"></path></g></svg>
+					</span>
+				</span>
+				<script>
+					const span = document.querySelector('.toggle-check');
+
+					if (themeValue == "dark") {
+						span.classList.add('checked')
+					}
+				</script>
+				<script>
+					window.addEventListener('pageshow', function(event) {
+						if (event.persisted) {
+							let themeValue = localStorage.getItem('theme');
+
+							document.documentElement.setAttribute('data-theme', themeValue);
+
+							const span = document.querySelector('.toggle-check');
+
+							if (themeValue == "dark") {
+									span.classList.add('checked')
+								}
+							}
+						});
+				</script>
+			</button>
+		</div>
+	</nav>
+}

@@ -1,0 +1,443 @@
+.code-block {
+  // width: fit-content;
+}
+
+.code-block-header {
+  height: 30px;
+  display: flex;
+  margin: 0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #2d333b;
+  border: 1px solid #444c56;
+  justify-content: end;
+}
+
+.language-name {
+  color: #fff;
+  line-height: 1;
+  align-self: center;
+  margin-right: 10px;
+  font-size: 13px;
+  font-weight: 500;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+pre {
+  margin-top: 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border: 1px solid #444c56;
+  border-top: none;
+  background-color: #22272e;
+  margin-left: auto;
+  margin-right: auto;
+  // word-wrap: break-word;
+  // white-space: pre-wrap;
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+code {
+  font-family: CascadiaMono;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 3px 5px;
+  line-height: 20px;
+  border-radius: 0.25rem;
+}
+
+// @media (max-width: 600px) {
+//   code {
+//     font-size: 12px;
+//   }
+// }
+
+pre code {
+  display: block;
+  padding: 0.5em 0.5em;
+}
+
+/* PreWrapper */
+.chroma {
+  color: #fff;
+  // background-color: #1e1e2e;
+}
+
+.chroma .line {
+  display: flex;
+  padding-bottom: 2px;
+}
+
+.chroma .ln {
+  color: #838b9e;
+  font-weight: 400;
+  white-space: pre;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-right: 0.5em;
+  padding: 0 0.4em 0 0.4em;
+}
+
+/* Error */
+.chroma .err {
+  color: #f38ba8;
+}
+
+/* LineLink */
+.chroma .lnlinks {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LineTableTD */
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* LineTable */
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* LineHighlight */
+.chroma .hl {
+  background-color: #343442;
+}
+
+/* LineNumbersTable */
+.chroma .lnt {
+  white-space: pre;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+  color: #7d5943;
+}
+
+/* Keyword */
+.chroma .k {
+  color: #cba6f7;
+}
+
+/* KeywordConstant */
+.chroma .kc {
+  color: #cba6f7;
+  font-style: italic;
+}
+
+/* KeywordDeclaration */
+.chroma .kd {
+  color: #cba6f7;
+}
+
+/* KeywordNamespace */
+.chroma .kn {
+  color: #cba6f7;
+}
+
+/* KeywordPseudo */
+.chroma .kp {
+  color: #cba6f7;
+  font-weight: bold;
+}
+
+/* KeywordReserved */
+.chroma .kr {
+  color: #cba6f7;
+}
+
+/* KeywordType */
+.chroma .kt {
+  color: #f9e2af;
+}
+
+.chroma .m {
+  color: #b4befe;
+}
+
+/* Name */
+.chroma .n {
+  color: #b4befe;
+}
+
+/* NameAttribute */
+.chroma .na {
+  color: #f9e2af;
+}
+
+/* NameBuiltin */
+.chroma .nb {
+  font-style: italic;
+}
+
+/* NameBuiltinPseudo */
+.chroma .bp {
+  color: #b4befe;
+}
+
+/* NameClass */
+.chroma .nc {
+  color: #f9e2af;
+}
+
+/* NameConstant */
+.chroma .no {
+  color: #f9e2af;
+}
+
+/* NameDecorator */
+.chroma .nd {
+  color: #f5c2e7;
+}
+
+/* NameEntity */
+.chroma .ni {
+  color: #f5c2e7;
+}
+
+/* NameException */
+.chroma .ne {
+  color: #eba0ac;
+}
+
+/* NameFunction */
+.chroma .nf {
+  color: #89dceb;
+}
+
+/* NameFunctionMagic */
+.chroma .fm {
+  color: #b4befe;
+}
+
+/* NameLabel */
+.chroma .nl {
+  color: #f9e2af;
+}
+
+/* NameNamespace */
+.chroma .nn {
+  color: #f9e2af;
+}
+
+/* NameProperty */
+.chroma .py {
+  color: #b4befe;
+}
+
+/* NameTag */
+.chroma .nt {
+  color: #cba6f7;
+}
+
+/* NameVariableClass */
+.chroma .vc {
+  color: #b4befe;
+}
+
+/* NameVariableGlobal */
+.chroma .vg {
+  color: #b4befe;
+}
+
+/* NameVariableInstance */
+.chroma .vi {
+  color: #b4befe;
+}
+
+/* NameVariableMagic */
+.chroma .vm {
+  color: #b4befe;
+}
+
+/* LiteralString */
+.chroma .s {
+  color: #a6e3a1;
+}
+
+/* LiteralStringAffix */
+.chroma .sa {
+  color: #a6e3a1;
+}
+
+/* LiteralStringBacktick */
+.chroma .sb {
+  color: #a6e3a1;
+}
+
+/* LiteralStringChar */
+.chroma .sc {
+  color: #a6e3a1;
+}
+
+/* LiteralStringDelimiter */
+.chroma .dl {
+  color: #a6e3a1;
+}
+
+/* LiteralStringDoc */
+.chroma .sd {
+  color: #a6e3a1;
+}
+
+/* LiteralStringDouble */
+.chroma .s2 {
+  color: #a6e3a1;
+}
+
+/* LiteralStringEscape */
+.chroma .se {
+  color: #89b4fa;
+}
+
+/* LiteralStringHeredoc */
+.chroma .sh {
+  color: #a6e3a1;
+}
+
+/* LiteralStringInterpol */
+.chroma .si {
+  color: #a6e3a1;
+}
+
+/* LiteralStringOther */
+.chroma .sx {
+  color: #a6e3a1;
+}
+
+/* LiteralStringRegex */
+.chroma .sr {
+  color: #89b4fa;
+}
+
+/* LiteralStringSingle */
+.chroma .s1 {
+  color: #a6e3a1;
+}
+
+/* LiteralStringSymbol */
+.chroma .ss {
+  color: #a6e3a1;
+}
+
+/* Operator */
+.chroma .o {
+  color: #89dceb;
+}
+
+/* OperatorWord */
+.chroma .ow {
+  color: #89dceb;
+  font-weight: bold;
+}
+
+/* Punctuation */
+.chroma .p {
+  color: #cdd6f4;
+}
+
+/* Comment */
+.chroma .c {
+  color: #585b70;
+  font-style: italic;
+}
+
+/* CommentHashbang */
+.chroma .ch {
+  color: #585b70;
+  font-style: italic;
+}
+
+/* CommentMultiline */
+.chroma .cm {
+  color: #585b70;
+  font-style: italic;
+}
+
+/* CommentSingle */
+.chroma .c1 {
+  color: #585b70;
+  font-style: italic;
+}
+
+/* CommentSpecial */
+.chroma .cs {
+  color: #585b70;
+  font-style: italic;
+}
+
+/* CommentPreproc */
+.chroma .cp {
+  color: #89b4fa;
+  font-style: italic;
+}
+
+/* CommentPreprocFile */
+.chroma .cpf {
+  color: #89b4fa;
+  font-style: italic;
+}
+
+/* GenericDeleted */
+.chroma .gd {
+  color: #eba0ac;
+}
+
+/* GenericEmph */
+.chroma .ge {
+  font-style: italic;
+}
+
+/* GenericError */
+.chroma .gr {
+  color: #eba0ac;
+}
+
+/* GenericHeading */
+.chroma .gh {
+  color: #89dceb;
+  font-weight: bold;
+}
+
+/* GenericInserted */
+.chroma .gi {
+  color: #a6e3a1;
+}
+
+/* GenericPrompt */
+.chroma .gp {
+  color: #6c7086;
+  font-weight: bold;
+}
+
+/* GenericStrong */
+.chroma .gs {
+  font-weight: bold;
+}
+
+/* GenericSubheading */
+.chroma .gu {
+  color: #89dceb;
+  font-weight: bold;
+}
+
+/* GenericTraceback */
+.chroma .gt {
+  color: #eba0ac;
+}
+
+/* TextWhitespace */
+.chroma .w {
+  color: #313244;
+}
