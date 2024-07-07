@@ -28,29 +28,44 @@ body {
 
 ::-webkit-scrollbar {
   background-color: transparent;
-  width: 5px;
-
-  &:horizontal {
-    height: 4px;
-  }
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f100;
 
   &:vertical {
-    background: #232330;
+    width: 5px;
   }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #c9c9c9;
-  border-radius: 4px;
+::-webkit-scrollbar-thumb:horizontal {
+  background: #b1b1b150;
+  background-clip: content-box;
+  border: 5px solid transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  width: 1px;
+  background: #c9c9c923;
+  border-radius: 10px;
 
   &:hover {
     background: #9b9b9b;
   }
 }
+
+@media (pointer: none), (pointer: coarse) {
+  ::-webkit-scrollbar-thumb:horizontal {
+    border: 1px solid transparent;
+    margin-left: 10px;
+  }
+}
+
+// ::-webkit-scrollbar-thumb:horizontal {
+//   background: #c9c9c923;
+//   border-radius: 4px;
+
+//   &:hover {
+//     background: #9b9b9b;
+//   }
+// }
 
 header {
   display: grid;
@@ -60,7 +75,7 @@ header {
   & h1 {
     margin: 0;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 28px;
   }
 

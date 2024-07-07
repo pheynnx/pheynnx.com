@@ -1,5 +1,9 @@
 .code-block {
+  // display: grid;
+  // justify-self: center;
+  // align-self: center;
   // width: fit-content;
+  // max-width: fit-content;
 }
 
 .code-block-header {
@@ -10,15 +14,15 @@
   border-top-right-radius: 0.5rem;
   background-color: #2d333b;
   border: 1px solid #444c56;
-  justify-content: end;
+  justify-content: start;
 }
 
 .language-name {
   color: #fff;
   line-height: 1;
   align-self: center;
-  margin-right: 10px;
-  font-size: 13px;
+  margin-left: 10px;
+  font-size: 12px;
   font-weight: 500;
 
   &::first-letter {
@@ -27,6 +31,7 @@
 }
 
 pre {
+  display: flex;
   margin-top: 0;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
@@ -84,7 +89,7 @@ pre code {
 
 /* Error */
 .chroma .err {
-  color: #f38ba8;
+  color: #ff5b89;
 }
 
 /* LineLink */
@@ -126,58 +131,48 @@ pre code {
 }
 
 /* Keyword */
+.chroma {
+  .kc {
+    color: #ff8f40;
+    font-style: italic;
+  }
+  .kp {
+    color: #ff8f40;
+    font-weight: bold;
+  }
+  .kd,
+  .kn,
+  .kr {
+    color: #ff8f40;
+  }
+}
+
 .chroma .k {
-  color: #cba6f7;
-}
-
-/* KeywordConstant */
-.chroma .kc {
-  color: #cba6f7;
-  font-style: italic;
-}
-
-/* KeywordDeclaration */
-.chroma .kd {
-  color: #cba6f7;
-}
-
-/* KeywordNamespace */
-.chroma .kn {
-  color: #cba6f7;
-}
-
-/* KeywordPseudo */
-.chroma .kp {
-  color: #cba6f7;
-  font-weight: bold;
-}
-
-/* KeywordReserved */
-.chroma .kr {
-  color: #cba6f7;
+  color: #ff4d40;
 }
 
 /* KeywordType */
 .chroma .kt {
-  color: #f9e2af;
+  color: #39bae6;
 }
 
 .chroma .m {
-  color: #b4befe;
+  color: #39bae6;
 }
 
 /* Name */
 .chroma .n {
-  color: #b4befe;
+  color: #39bae6;
 }
 
 /* NameAttribute */
 .chroma .na {
-  color: #f9e2af;
+  color: #39bae6;
 }
 
 /* NameBuiltin */
 .chroma .nb {
+  color: #f0634b;
   font-style: italic;
 }
 
@@ -188,22 +183,22 @@ pre code {
 
 /* NameClass */
 .chroma .nc {
-  color: #f9e2af;
+  color: #39bae6;
 }
 
 /* NameConstant */
 .chroma .no {
-  color: #f9e2af;
+  color: #39bae6;
 }
 
 /* NameDecorator */
 .chroma .nd {
-  color: #f5c2e7;
+  color: #ff8f40;
 }
 
 /* NameEntity */
 .chroma .ni {
-  color: #f5c2e7;
+  color: #ff8f40;
 }
 
 /* NameException */
@@ -213,7 +208,11 @@ pre code {
 
 /* NameFunction */
 .chroma .nf {
-  color: #89dceb;
+  color: #ffb454;
+}
+
+.chroma .mi {
+  color: #c6a6ff;
 }
 
 /* NameFunctionMagic */
@@ -223,12 +222,12 @@ pre code {
 
 /* NameLabel */
 .chroma .nl {
-  color: #f9e2af;
+  color: #39bae6;
 }
 
 /* NameNamespace */
 .chroma .nn {
-  color: #f9e2af;
+  color: #39bae6;
 }
 
 /* NameProperty */
@@ -261,90 +260,39 @@ pre code {
   color: #b4befe;
 }
 
-/* LiteralString */
-.chroma .s {
-  color: #a6e3a1;
-}
-
-/* LiteralStringAffix */
-.chroma .sa {
-  color: #a6e3a1;
-}
-
-/* LiteralStringBacktick */
-.chroma .sb {
-  color: #a6e3a1;
-}
-
-/* LiteralStringChar */
-.chroma .sc {
-  color: #a6e3a1;
-}
-
-/* LiteralStringDelimiter */
-.chroma .dl {
-  color: #a6e3a1;
-}
-
-/* LiteralStringDoc */
-.chroma .sd {
-  color: #a6e3a1;
-}
-
-/* LiteralStringDouble */
-.chroma .s2 {
-  color: #a6e3a1;
-}
-
-/* LiteralStringEscape */
-.chroma .se {
-  color: #89b4fa;
-}
-
-/* LiteralStringHeredoc */
-.chroma .sh {
-  color: #a6e3a1;
-}
-
-/* LiteralStringInterpol */
-.chroma .si {
-  color: #a6e3a1;
-}
-
-/* LiteralStringOther */
-.chroma .sx {
-  color: #a6e3a1;
-}
-
-/* LiteralStringRegex */
-.chroma .sr {
-  color: #89b4fa;
-}
-
-/* LiteralStringSingle */
-.chroma .s1 {
-  color: #a6e3a1;
-}
-
-/* LiteralStringSymbol */
-.chroma .ss {
-  color: #a6e3a1;
+.chroma {
+  .s,
+  .sa,
+  .sb,
+  .sc,
+  .dl,
+  .sd,
+  .s2,
+  .se,
+  .sh,
+  .si,
+  .sx,
+  .sr,
+  .s1,
+  .ss {
+    color: #aad94c;
+  }
 }
 
 /* Operator */
 .chroma .o {
-  color: #89dceb;
+  color: #f29668;
 }
 
 /* OperatorWord */
 .chroma .ow {
-  color: #89dceb;
+  color: #f29668;
   font-weight: bold;
 }
 
 /* Punctuation */
 .chroma .p {
-  color: #cdd6f4;
+  color: #da70d6;
 }
 
 /* Comment */
@@ -406,7 +354,7 @@ pre code {
 
 /* GenericHeading */
 .chroma .gh {
-  color: #89dceb;
+  color: #f29668;
   font-weight: bold;
 }
 
@@ -428,7 +376,7 @@ pre code {
 
 /* GenericSubheading */
 .chroma .gu {
-  color: #89dceb;
+  color: #f29668;
   font-weight: bold;
 }
 
