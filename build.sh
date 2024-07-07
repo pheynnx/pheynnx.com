@@ -7,8 +7,7 @@ get_pid() {
     echo $(ps aux | grep "$APP_NAME" | grep -v "grep" | awk '{print $2}')
 }
 
-if [ "$1" == "build" ]; then
-
+build() {
     echo "Compiling SCSS files..."
     sass --no-source-map --style=compressed web/source/scss:web/static/css
 
@@ -17,6 +16,10 @@ if [ "$1" == "build" ]; then
 
     echo "Building Go project..."
     go build -o build/pheynnx.com cmd/pheynnx/main.go
+}
+
+if [ "$1" == "build" ]; then
+    build
 
     echo "Done!"
 
@@ -25,11 +28,11 @@ elif [ "$1" == "dev" ]; then
     echo "Compiling SCSS files..."
     sass --watch --no-source-map --style=compressed web/source/scss:web/static/css &
 
-    echo "Generating templ files..."
-    templ generate
+    # echo "Generating templ files..."
+    # templ generate
 
-    echo "Building Go project..."
-    go build -o build/pheynnx.com cmd/pheynnx/main.go
+    echo "Starting air..."
+    air
 
     echo "Running Go project..."
     build/pheynnx.com
@@ -37,14 +40,7 @@ elif [ "$1" == "dev" ]; then
     echo "Development environment setup completed."
 
 elif [ "$1" == "prod" ]; then
-    echo "Compiling SCSS files..."
-    sass --no-source-map --style=compressed web/source/scss:web/static/css
-
-    echo "Generating templ files..."
-    templ generate
-
-    echo "Building Go project..."
-    go build -o build/pheynnx.com cmd/pheynnx/main.go
+    build
 
     echo "Running pheynnx.com headless"
 
@@ -53,13 +49,13 @@ elif [ "$1" == "prod" ]; then
         go build -o build/pheynnx.com path/to/your/main.go
     fi
 
-    nohup build/pheynnx.com > "$LOG_FILE" 2>&1 &
+    nohup build/pheynnx.com >> "$LOG_FILE" 2>&1 &
 
     echo "Go project is running headless. Output is redirected to $LOG_FILE."
 
     PID=$(get_pid)
     echo "Go project PID: $PID"
-    
+
 else
     echo "Invalid argument. Please use 'build' | 'dev' | 'prod'."
 fi
