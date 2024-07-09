@@ -67,17 +67,17 @@ pre code {
 }
 
 /* PreWrapper */
-.chroma {
+.pynx {
   color: #fff;
   // background-color: #1e1e2e;
 }
 
-.chroma .line {
+.pynx .line {
   display: flex;
   padding-bottom: 2px;
 }
 
-.chroma .ln {
+.pynx .ln {
   color: #838b9e;
   font-weight: 400;
   white-space: pre;
@@ -88,19 +88,19 @@ pre code {
 }
 
 /* Error */
-.chroma .err {
+.pynx .err {
   color: #ff5b89;
 }
 
 /* LineLink */
-.chroma .lnlinks {
+.pynx .lnlinks {
   outline: none;
   text-decoration: none;
   color: inherit;
 }
 
 /* LineTableTD */
-.chroma .lntd {
+.pynx .lntd {
   vertical-align: top;
   padding: 0;
   margin: 0;
@@ -108,7 +108,7 @@ pre code {
 }
 
 /* LineTable */
-.chroma .lntable {
+.pynx .lntable {
   border-spacing: 0;
   padding: 0;
   margin: 0;
@@ -116,12 +116,12 @@ pre code {
 }
 
 /* LineHighlight */
-.chroma .hl {
+.pynx .hl {
   background-color: #343442;
 }
 
 /* LineNumbersTable */
-.chroma .lnt {
+.pynx .lnt {
   white-space: pre;
   -webkit-user-select: none;
   user-select: none;
@@ -131,7 +131,7 @@ pre code {
 }
 
 /* Keyword */
-.chroma {
+.pynx {
   .kc {
     color: #ff8f40;
     font-style: italic;
@@ -147,120 +147,120 @@ pre code {
   }
 }
 
-.chroma .k {
+.pynx .k {
   color: #ff4d40;
 }
 
 /* KeywordType */
-.chroma .kt {
+.pynx .kt {
   color: #39bae6;
 }
 
-.chroma .m {
+.pynx .m {
   color: #39bae6;
 }
 
 /* Name */
-.chroma .n {
+.pynx .n {
   color: #39bae6;
 }
 
 /* NameAttribute */
-.chroma .na {
+.pynx .na {
   color: #39bae6;
 }
 
 /* NameBuiltin */
-.chroma .nb {
+.pynx .nb {
   color: #f0634b;
   font-style: italic;
 }
 
 /* NameBuiltinPseudo */
-.chroma .bp {
+.pynx .bp {
   color: #b4befe;
 }
 
 /* NameClass */
-.chroma .nc {
+.pynx .nc {
   color: #39bae6;
 }
 
 /* NameConstant */
-.chroma .no {
+.pynx .no {
   color: #39bae6;
 }
 
 /* NameDecorator */
-.chroma .nd {
+.pynx .nd {
   color: #ff8f40;
 }
 
 /* NameEntity */
-.chroma .ni {
+.pynx .ni {
   color: #ff8f40;
 }
 
 /* NameException */
-.chroma .ne {
+.pynx .ne {
   color: #eba0ac;
 }
 
 /* NameFunction */
-.chroma .nf {
+.pynx .nf {
   color: #ffb454;
 }
 
-.chroma .mi {
+.pynx .mi {
   color: #c6a6ff;
 }
 
 /* NameFunctionMagic */
-.chroma .fm {
+.pynx .fm {
   color: #b4befe;
 }
 
 /* NameLabel */
-.chroma .nl {
+.pynx .nl {
   color: #39bae6;
 }
 
 /* NameNamespace */
-.chroma .nn {
+.pynx .nn {
   color: #39bae6;
 }
 
 /* NameProperty */
-.chroma .py {
+.pynx .py {
   color: #b4befe;
 }
 
 /* NameTag */
-.chroma .nt {
+.pynx .nt {
   color: #cba6f7;
 }
 
 /* NameVariableClass */
-.chroma .vc {
+.pynx .vc {
   color: #b4befe;
 }
 
 /* NameVariableGlobal */
-.chroma .vg {
+.pynx .vg {
   color: #b4befe;
 }
 
 /* NameVariableInstance */
-.chroma .vi {
+.pynx .vi {
   color: #b4befe;
 }
 
 /* NameVariableMagic */
-.chroma .vm {
+.pynx .vm {
   color: #b4befe;
 }
 
-.chroma {
+.pynx {
   .s,
   .sa,
   .sb,
@@ -280,112 +280,112 @@ pre code {
 }
 
 /* Operator */
-.chroma .o {
+.pynx .o {
   color: #f29668;
 }
 
 /* OperatorWord */
-.chroma .ow {
+.pynx .ow {
   color: #f29668;
   font-weight: bold;
 }
 
 /* Punctuation */
-.chroma .p {
+.pynx .p {
   color: #da70d6;
 }
 
 /* Comment */
-.chroma .c {
+.pynx .c {
   color: #585b70;
   font-style: italic;
 }
 
 /* CommentHashbang */
-.chroma .ch {
+.pynx .ch {
   color: #585b70;
   font-style: italic;
 }
 
 /* CommentMultiline */
-.chroma .cm {
+.pynx .cm {
   color: #585b70;
   font-style: italic;
 }
 
 /* CommentSingle */
-.chroma .c1 {
+.pynx .c1 {
   color: #585b70;
   font-style: italic;
 }
 
 /* CommentSpecial */
-.chroma .cs {
+.pynx .cs {
   color: #585b70;
   font-style: italic;
 }
 
 /* CommentPreproc */
-.chroma .cp {
+.pynx .cp {
   color: #89b4fa;
   font-style: italic;
 }
 
 /* CommentPreprocFile */
-.chroma .cpf {
+.pynx .cpf {
   color: #89b4fa;
   font-style: italic;
 }
 
 /* GenericDeleted */
-.chroma .gd {
+.pynx .gd {
   color: #eba0ac;
 }
 
 /* GenericEmph */
-.chroma .ge {
+.pynx .ge {
   font-style: italic;
 }
 
 /* GenericError */
-.chroma .gr {
+.pynx .gr {
   color: #eba0ac;
 }
 
 /* GenericHeading */
-.chroma .gh {
+.pynx .gh {
   color: #f29668;
   font-weight: bold;
 }
 
 /* GenericInserted */
-.chroma .gi {
+.pynx .gi {
   color: #a6e3a1;
 }
 
 /* GenericPrompt */
-.chroma .gp {
+.pynx .gp {
   color: #6c7086;
   font-weight: bold;
 }
 
 /* GenericStrong */
-.chroma .gs {
+.pynx .gs {
   font-weight: bold;
 }
 
 /* GenericSubheading */
-.chroma .gu {
+.pynx .gu {
   color: #f29668;
   font-weight: bold;
 }
 
 /* GenericTraceback */
-.chroma .gt {
+.pynx .gt {
   color: #eba0ac;
 }
 
 /* TextWhitespace */
-.chroma .w {
+.pynx .w {
   color: #313244;
 }

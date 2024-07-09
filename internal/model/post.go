@@ -46,7 +46,7 @@ var md = goldmark.New(
 						w.WriteString("<pre><code>")
 						return
 					}
-					w.WriteString(fmt.Sprintf(`<div class="code-block"><p class="code-block-header"><span class="language-name">%s</span></p>`, lang))
+					w.WriteString(fmt.Sprintf(`<div class="code-block"><p class="code-block-header"><span class="language-name">%s</span></p><pre class="pynx"><code>`, lang))
 				} else {
 					if lang == nil {
 						w.WriteString("</pre></code>")
@@ -57,7 +57,7 @@ var md = goldmark.New(
 			}),
 			highlighting.WithFormatOptions(
 				chromahtml.WithLineNumbers(true),
-				// chromahtml.PreventSurroundingPre(true),
+				chromahtml.PreventSurroundingPre(true),
 				chromahtml.WithClasses(true),
 			),
 		),

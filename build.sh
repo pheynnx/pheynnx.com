@@ -28,14 +28,8 @@ elif [ "$1" == "dev" ]; then
     echo "Compiling SCSS files..."
     sass --watch --no-source-map --style=compressed web/source/scss:web/static/css &
 
-    # echo "Generating templ files..."
-    # templ generate
-
     echo "Starting air..."
     air
-
-    echo "Running Go project..."
-    build/pheynnx.com
 
     echo "Development environment setup completed."
 
@@ -46,7 +40,7 @@ elif [ "$1" == "prod" ]; then
 
     if [ ! -f build/pheynnx.com ]; then
         echo "Go binary not found. Building Go project..."
-        go build -o build/pheynnx.com path/to/your/main.go
+        go build -o build/pheynnx.com cmd/pheynnx/main.go
     fi
 
     nohup build/pheynnx.com >> "$LOG_FILE" 2>&1 &
